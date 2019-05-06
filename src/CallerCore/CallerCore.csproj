@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyName>CallerCore</AssemblyName>
+        <RootNamespace>CallerCore.MainCore</RootNamespace>
+        <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">netstandard2.0;netstandard1.1;netstandard1.6;net45</TargetFrameworks>
+        <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
+        <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wpa81;</AssetTargetFallback>
+        <Product>$(AssemblyName) ($(TargetFramework))</Product>
+        <PackOnBuild>true</PackOnBuild>
+        <PackageId>CallerCore</PackageId>
+        <PackageVersion>1.0.9</PackageVersion>
+        <Authors>BiscuitDev</Authors>
+        <PackageIconUrl>https://github.com/BiscuitDev/CallerCore/blob/master/icons/CallerCore_64x64.png</PackageIconUrl>
+        <PackageLicenseUrl>https://github.com/BiscuitDev/CallerCore/blob/master/component/License.md</PackageLicenseUrl>
+        <Owners>BiscuitDev</Owners>
+        <PackageProjectUrl>https://github.com/BiscuitDev/CallerCore</PackageProjectUrl>
+        <Summary>CallerCore allows the developers to create pluggable components.</Summary>
+        <Title>CallerCore</Title>
+        <Description>CallerCore allows the developers to create pluggable code for iOS, Android, Windows Phone and Mac. CallerCore is based on provider design pattern and Inversion of Control Container (IoC)</Description>
+        <PackageTags>Providern Pattern, IoC, c#, CallerCore, Xamarin</PackageTags>
+        <PackOnBuild>true</PackOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="../readme.txt" PackagePath="readme.txt" Pack="true" />
+        <PackageReference Include="MSBuild.Sdk.Extras" Version="1.6.61" PrivateAssets="All" />
+    </ItemGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+    </ItemGroup>
+    <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+</Project>

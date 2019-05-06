@@ -1,0 +1,7 @@
+lunch rake
+
+unzip CallerCore-1.1.xam
+
+copy CallerCoreSamples.sln in directory CallerCore-1.1/samples/CallerCoreSample/
+
+zip -r CallerCore-1.1.xam CallerCore-1.1

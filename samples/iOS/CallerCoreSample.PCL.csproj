@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <ProjectGuid>{4B1DB0BB-BA9A-4C36-925F-4626F7E8A486}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>CallerCoreSample.PCL</RootNamespace>
+        <AssemblyName>CallerCoreSample.PCL</AssemblyName>
+        <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>full</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="CallerCoreSample.PCL\Properties\AssemblyInfo.cs" />
+        <Compile Include="CallerCoreSample.PCL\MainCorePcl.cs" />
+        <Compile Include="CallerCoreSample.PCL\ListenerPrintString.cs" />
+        <Compile Include="CallerCoreSample.PCL\PrintCounter.cs" />
+        <Compile Include="CallerCoreSample.PCL\ISampleSingleton.cs" />
+        <Compile Include="CallerCoreSample.PCL\MyTypes.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\CallerCore\CallerCore.csproj">
+            <Project>{1325C172-72E4-4167-9749-2C5FC48C3B7C}</Project>
+            <Name>CallerCore</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="project.json" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+    <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+</Project>

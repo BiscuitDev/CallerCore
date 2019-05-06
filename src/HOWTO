@@ -1,0 +1,13 @@
+9/11/2018 
+
+a) Update this line to get a new version of MSBuild.sdk CallerCore.csproj:
+
+<PackageReference Include="MSBuild.Sdk.Extras" Version="1.6.61" PrivateAssets="All" />
+
+b) Launch both command to create a nuget package:
+
+msbuild CallerCore.csproj /p:Configuration=Publish /t:Restore;Build
+
+msbuild /t:pack /p:Configuration=Release
+
+

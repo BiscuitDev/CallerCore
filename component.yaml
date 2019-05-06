@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+name: CallerCore
+id: CallerCore
+publisher: BiscuitDev
+license: component/License.md
+icons: 
+  - icons/CallerCore_128x128.png
+  - icons/CallerCore_512x512.png
+publisher-url: https://github.com/BiscuitDev
+src-url: https://github.com/BiscuitDev/CallerCore
+libraries: 
+  ios: src/CallerCore/bin/Release/CallerCore.dll
+  ios-unified: src/CallerCore/bin/Release/CallerCore.dll
+  android: src/CallerCore/bin/Release/CallerCore.dll
+  wp8: src/CallerCore/bin/Release/CallerCore.dll
+  mac-unified: src/CallerCore/bin/Release/CallerCore.dll
+  mobile: src/CallerCore/bin/Release/CallerCore.dll
+summary: CallerCore allows the developers to create pluggable code for iOS, Android, Windows Phone and Mac
+details: component/Details.md
+getting-started: component/GettingStarted.md
+version: "1.2"
+build:
+    - src/CallerCore/CallerCore.sln
+samples: 
+  - name: "iOS Sample"
+    path: samples/iOS/CallerCoreSample.iOS.sln
+    configuration: "Release|iPhone"  
+    nobuild: true
+  - name: "Android Sample"
+    path: samples/Android/CallerCoreSample.Droid.sln
+    configuration: "Release"  
+    nobuild: true
+...
